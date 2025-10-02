@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #050510 0%, #000000 100%);
+  color: #00f0ff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-4/cur330.cur'), auto;
+}
+h1 {
+  margin: 1rem 0;
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  color: #00f0ff;
+  text-shadow:
+    0 0 5px #00f0ff,
+    0 0 15px #00c8ff,
+    0 0 30px #0090ff,
+    0 0 60px #0060ff;
+  border-bottom: 2px solid #00f0ff88;
+  padding-bottom: 0.5rem;
+  width: fit-content;
+  position: relative;
+}
+nav {
+  margin: 2rem 0;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+nav button {
+  background: rgba(0, 20, 40, 0.7);
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 5px #00eaff, 0 0 15px #0080ff;
+  box-shadow:
+    0 0 10px #00eaff,
+    inset 0 0 5px #0040ff;
+}
+nav button:hover {
+  background: #00eaff33;
+  box-shadow:
+    0 0 20px #00f0ff,
+    0 0 50px #0080ff,
+    inset 0 0 15px #00eaff;
+  transform: translateY(-2px) scale(1.05);
+}
+main#view {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(0, 0, 30, 0.75);
+  border-radius: 15px;
+  box-shadow: 0 0 25px #0040ff, inset 0 0 10px #001040;
+  width: min(95%, 600px);
+  max-width: 90%;
+  color: #e0faff;
+  font-size: 1.2rem;
+}
+input, button#check, button#add, .editBtn, .deleteBtn, #saveEdit, #cancelEdit {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #00f0ff;
+  border-radius: 6px;
+  background: #050510;
+  color: #00f0ff;
+  outline: none;
+  box-shadow: inset 0 0 8px #00eaff;
+  transition: all 0.2s;
+}
+input:focus {
+  box-shadow: 0 0 12px #00eaff, inset 0 0 12px #00eaff;
+}
+button#check:hover, button#add:hover,
+.editBtn:hover, .deleteBtn:hover, #saveEdit:hover, #cancelEdit:hover {
+  background: #00eaff22;
+  box-shadow: 0 0 20px #00f0ff, 0 0 45px #0080ff;
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #0ff;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+li button {
+  font-size: 0.8rem;
+  background: linear-gradient(90deg, #f0f, #ff0);
+  color: #000;
+}
+#result {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
