@@ -1,127 +1,87 @@
-```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bit英単語テスト</title>
-  <script src="app.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyberpunk UI</title>
   <style>
+    /* Google Fonts (SF風近未来) */
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
     body {
       margin: 0;
-      font-family: 'Orbitron', 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #050510 0%, #000000 100%);
-      color: #00f0ff;
-      text-align: center;
-      min-height: 100vh;
+      padding: 0;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      overflow-x: hidden;
-    }
-    h1 {
-      margin: 1rem 0;
-      font-size: 3rem;
-      letter-spacing: 0.1em;
-      color: #00f0ff;
-      text-shadow:
-        0 0 5px #00f0ff,
-        0 0 15px #00c8ff,
-        0 0 30px #0090ff,
-        0 0 60px #0060ff;
-      border-bottom: 2px solid #00f0ff88;
-      padding-bottom: 0.5rem;
-      width: fit-content;
-    }
-    nav {
-      margin: 2rem 0;
-      display: flex;
-      gap: 1.2rem;
-    }
-    nav button {
-      background: rgba(0, 20, 40, 0.7);
-      border: 2px solid #00eaff;
-      color: #00eaff;
-      padding: 0.7rem 1.7rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.25s ease-in-out;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-shadow: 0 0 5px #00eaff, 0 0 15px #0080ff;
-      box-shadow:
-        0 0 10px #00eaff,
-        inset 0 0 5px #0040ff;
-    }
-    nav button:hover {
-      background: #00eaff33;
-      box-shadow:
-        0 0 20px #00f0ff,
-        0 0 50px #0080ff,
-        inset 0 0 15px #00eaff;
-      transform: translateY(-2px) scale(1.05);
-    }
-    main#view {
-      margin-top: 2rem;
-      padding: 2rem;
-      background: rgba(0, 0, 30, 0.75);
-      border-radius: 15px;
-      box-shadow: 0 0 25px #0040ff, inset 0 0 10px #001040;
-      width: min(90%, 550px);
-      color: #e0faff;
-      font-size: 1.2rem;
-    }
-    input, button#check, button#add {
-      margin-top: 1rem;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      border: 2px solid #00f0ff;
-      border-radius: 6px;
-      background: #050510;
-      color: #00f0ff;
-      outline: none;
-      box-shadow: inset 0 0 8px #00eaff;
-    }
-    input:focus {
-      box-shadow: 0 0 12px #00eaff, inset 0 0 12px #00eaff;
-    }
-    button#check:hover, button#add:hover {
-      background: #00eaff22;
-      box-shadow: 0 0 20px #00f0ff, 0 0 45px #0080ff;
-      cursor: pointer;
-      transform: translateY(-1px);
+      background: radial-gradient(circle at top, #0ff, #060014 80%);
+      color: #0ff;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
     }
 
-    /* グリッチ風アニメーション */
-    h1::after {
-      content: "Bit英単語テスト";
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ff00ff;
-      text-shadow: -2px 0 #ff00ff;
-      clip: rect(0, 900px, 0, 0);
-      animation: glitch 2s infinite linear alternate-reverse;
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 40px;
+      border: 2px solid #0ff;
+      border-radius: 16px;
+      box-shadow: 0 0 25px #0ff, 0 0 50px #ff00ff;
+      background: rgba(10, 0, 30, 0.8);
     }
-    @keyframes glitch {
-      0% { clip: rect(20px, 9999px, 21px, 0); }
-      20% { clip: rect(60px, 9999px, 61px, 0); }
-      40% { clip: rect(40px, 9999px, 41px, 0); }
-      60% { clip: rect(80px, 9999px, 81px, 0); }
-      80% { clip: rect(10px, 9999px, 11px, 0); }
-      100% { clip: rect(50px, 9999px, 51px, 0); }
+
+    h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      border: 2px solid #0ff;
+      color: #0ff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .btn:hover {
+      background: #0ff;
+      color: #060014;
+      box-shadow: 0 0 20px #0ff, 0 0 30px #ff00ff;
+    }
+
+    /* スマホ用 */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Bit英単語テスト</h1>
-  <nav>
-    <button id="modeLearn">学習</button>
-    <button id="modeList">リスト</button>
-    <button id="modeAdd">追加</button>
-  </nav>
-  <main id="view"></main>
+  <div class="container">
+    <h1>Welcome to Cyberpunk World</h1>
+    <p>ネオンが光る未来都市をイメージしたUIデザイン。<br>
+       PCでは画面いっぱいに広がり、スマホでも快適に閲覧できます。</p>
+    <a href="#" class="btn">Start</a>
+  </div>
 </body>
 </html>
-```
