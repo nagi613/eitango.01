@@ -1,3 +1,4 @@
+/* ===== 全体 ===== */
 body {
   margin: 0;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
@@ -9,20 +10,14 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  cursor: url('https://i.ibb.co/F6k9hJq/neon-heart-anim.gif'), auto;
+  cursor: none; /* 元カーソル非表示 */
 }
-
-
 h1 {
   margin: 1rem 0;
   font-size: 3rem;
   letter-spacing: 0.1em;
   color: #00f0ff;
-  text-shadow:
-    0 0 5px #00f0ff,
-    0 0 15px #00c8ff,
-    0 0 30px #0090ff,
-    0 0 60px #0060ff;
+  text-shadow: 0 0 5px #00f0ff, 0 0 15px #00c8ff, 0 0 30px #0090ff, 0 0 60px #0060ff;
   border-bottom: 2px solid #00f0ff88;
   padding-bottom: 0.5rem;
   width: fit-content;
@@ -47,16 +42,11 @@ nav button {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-shadow: 0 0 5px #00eaff, 0 0 15px #0080ff;
-  box-shadow:
-    0 0 10px #00eaff,
-    inset 0 0 5px #0040ff;
+  box-shadow: 0 0 10px #00eaff, inset 0 0 5px #0040ff;
 }
 nav button:hover {
   background: #00eaff33;
-  box-shadow:
-    0 0 20px #00f0ff,
-    0 0 50px #0080ff,
-    inset 0 0 15px #00eaff;
+  box-shadow: 0 0 20px #00f0ff, 0 0 50px #0080ff, inset 0 0 15px #00eaff;
   transform: translateY(-2px) scale(1.05);
 }
 main#view {
@@ -116,4 +106,15 @@ li button {
 #result {
   font-size: 1.2rem;
   margin-top: 10px;
+}
+
+/* ===== GIFカーソル ===== */
+#cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  background: url('https://i.ibb.co/F6k9hJq/neon-heart-anim.gif') no-repeat center/contain;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
 }
