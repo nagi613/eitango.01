@@ -1,4 +1,4 @@
-/* ===== 全体 ===== */
+/* ===== ボディ全体 ===== */
 body {
   margin: 0;
   font-family: 'Orbitron', 'Segoe UI', sans-serif;
@@ -10,8 +10,25 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  cursor: none; /* 元カーソル非表示 */
+  cursor: none; /* 元のカーソルを消す */
 }
+
+/* ===== カスタムカーソル ===== */
+#cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0,0,0,0.2); /* 安定表示用 */
+  background-image: url('https://i.ibb.co/F6k9hJq/neon-heart-anim.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* ===== ヘッダー ===== */
 h1 {
   margin: 1rem 0;
   font-size: 3rem;
@@ -23,6 +40,8 @@ h1 {
   width: fit-content;
   position: relative;
 }
+
+/* ===== ナビボタン ===== */
 nav {
   margin: 2rem 0;
   display: flex;
@@ -30,6 +49,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 nav button {
   background: rgba(0, 20, 40, 0.7);
   border: 2px solid #00eaff;
@@ -49,6 +69,8 @@ nav button:hover {
   box-shadow: 0 0 20px #00f0ff, 0 0 50px #0080ff, inset 0 0 15px #00eaff;
   transform: translateY(-2px) scale(1.05);
 }
+
+/* ===== メイン表示部分 ===== */
 main#view {
   margin-top: 2rem;
   padding: 2rem;
@@ -60,7 +82,9 @@ main#view {
   color: #e0faff;
   font-size: 1.2rem;
 }
-input, button#check, button#add, .editBtn, .deleteBtn, #saveEdit, #cancelEdit {
+
+/* ===== 入力とボタン ===== */
+input, button, .editBtn, .deleteBtn, #saveEdit, #cancelEdit {
   margin-top: 1rem;
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -75,13 +99,14 @@ input, button#check, button#add, .editBtn, .deleteBtn, #saveEdit, #cancelEdit {
 input:focus {
   box-shadow: 0 0 12px #00eaff, inset 0 0 12px #00eaff;
 }
-button#check:hover, button#add:hover,
-.editBtn:hover, .deleteBtn:hover, #saveEdit:hover, #cancelEdit:hover {
+button:hover, .editBtn:hover, .deleteBtn:hover, #saveEdit:hover, #cancelEdit:hover {
   background: #00eaff22;
   box-shadow: 0 0 20px #00f0ff, 0 0 45px #0080ff;
-  cursor: pointer;
   transform: translateY(-1px);
+  cursor: pointer;
 }
+
+/* ===== 単語リスト ===== */
 ul {
   list-style: none;
   padding: 0;
@@ -106,15 +131,4 @@ li button {
 #result {
   font-size: 1.2rem;
   margin-top: 10px;
-}
-
-/* ===== GIFカーソル ===== */
-#cursor {
-  position: fixed;
-  width: 32px;
-  height: 32px;
-  background: url('https://i.ibb.co/F6k9hJq/neon-heart-anim.gif') no-repeat center/contain;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
 }
