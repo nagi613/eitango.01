@@ -9,11 +9,9 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  cursor: url('https://cur.cursors-4u.net/cursors/cur-4/cur330.cur'), auto;
-}
-body {
   cursor: url('https://i.ibb.co/FsV4Wjr/cursor-heart-anim.gif'), auto;
 }
+
 
 h1 {
   margin: 1rem 0;
